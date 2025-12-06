@@ -1,22 +1,22 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Md. Iqramul Hoque",
+    "email": "ikramulh282@gmail.com",
+    "phone": "+880 1739977087",
+    "website": "https://Ikramul-hq.github.io",
+    "summary": " Ph.D. Candidate in Industrial and Systems Engineering.",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "address": "Shwapno Danga, Hazaribagh",
+      "postalCode": "1209",
+      "city": "Dhaka",
+      "countryCode": "BD",
+      "region": "Dhaka"
     },
     "profiles": [
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?hl=en&user=1WYAO1MAAAAJ"
       },
       {
         "network": "ORCID",
