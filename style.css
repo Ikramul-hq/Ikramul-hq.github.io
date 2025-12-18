@@ -1,0 +1,438 @@
+/* ===========================
+   1. RESET & GLOBAL STYLES
+=========================== */
+/* Yellow Text Selection */
+::selection {
+    background: #ffb727; 
+    color: #111;         
+}
+::-moz-selection {
+    background: #ffb727;
+    color: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #111; /* Very dark background */
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Stops vertical bouncing */
+    min-height: 100vh;
+    padding: 60px 20px; /* Consistent top padding */
+}
+
+/* ===========================
+   2. MAIN LAYOUT CONTAINER
+=========================== */
+.main-container {
+    display: flex;
+    max-width: 1100px; 
+    width: 100%;
+    gap: 40px; 
+    align-items: flex-start; 
+}
+
+/* ===========================
+   3. LEFT COLUMN: PROFILE CARD
+=========================== */
+.profile-card {
+    width: 320px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    position: sticky;
+    top: 60px; /* Matches body padding */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    flex-shrink: 0; 
+    border: 1px solid #2a2a2a;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #2d2d2d;
+}
+
+.profile-card h1 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: #aaa;
+    font-size: 18px;
+    transition: 0.3s;
+    background: #252525;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.social-links a:hover {
+    color: #111;
+    background: #ffb727; 
+}
+
+.contact-box {
+    background: #252525;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-box i {
+    color: #ffb727;
+    font-size: 18px;
+}
+
+.contact-box div span {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.contact-box div p {
+    font-size: 13px;
+    color: #ddd;
+    word-break: break-all;
+}
+
+/* Sidebar CV Button */
+.btn-cv-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    color: #ffb727;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #ffb727;
+    transition: 0.3s;
+}
+
+.btn-cv-sidebar:hover {
+    background: #ffb727;
+    color: #111;
+}
+
+/* ===========================
+   4. RIGHT COLUMN: CONTENT AREA
+=========================== */
+.content-card {
+    flex-grow: 1;
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden; 
+    border: 1px solid #2a2a2a;
+    min-height: 600px;
+}
+
+/* Top Navigation */
+.top-nav {
+    background: #252525;
+    padding: 20px 30px;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    justify-content: flex-end; 
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.top-nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.top-nav a:hover, .top-nav a.active {
+    color: #ffb727; 
+    background: rgba(255, 183, 39, 0.1); 
+}
+
+/* Content Body */
+.content-body {
+    padding: 40px;
+}
+
+.page-title {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: #ffb727;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+}
+
+/* Text Content Typography */
+.text-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #bbb;
+    font-size: 15px;
+}
+
+/* ===========================
+   5. SHARED ITEM CARDS (Projects/Experience)
+=========================== */
+.item-card {
+    background: #252525;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #ffb727; 
+    transition: transform 0.3s;
+}
+
+.item-card:hover {
+    transform: translateX(5px); 
+}
+
+.item-card h3 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.item-card h4 {
+    font-size: 14px;
+    color: #ffb727; 
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.item-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Tags (for Projects) */
+.tags {
+    margin-bottom: 15px;
+}
+.tags span {
+    display: inline-block;
+    background: #333;
+    color: #ccc;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    margin-right: 6px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* PDF Links */
+.item-card a.link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #ffb727;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* Google Scholar Button */
+.scholar-btn {
+   display:inline-flex;
+   align-items: center;
+   gap: 10px;
+   margin-top:30px;
+   background:#252525;
+   color:#fff;
+   padding:12px 25px;
+   border-radius:50px;
+   text-decoration:none;
+   font-weight: 500;
+   transition: 0.3s;
+   border: 2px solid #252525;
+}
+
+.scholar-btn:hover {
+    border-color: #ffb727;
+    color: #ffb727;
+}
+
+/* ===========================
+   6. TIMELINE STYLES (Education)
+=========================== */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #333; /* The vertical line */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 20px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* The Yellow Dot */
+.timeline-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ffb727;
+    border-radius: 50%;
+    left: -27px; /* Aligns with the border line */
+    top: 5px;
+    border: 2px solid #1e1e1e; /* Creates a gap effect */
+    box-shadow: 0 0 0 2px #ffb727; /* Double ring effect */
+}
+
+/* Header container for Title + Right-side Info */
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.timeline-header h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+    flex: 1; 
+}
+
+/* Right Side Container (Date + CGPA) */
+.timeline-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px; 
+    flex-shrink: 0; 
+}
+
+.timeline-date {
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 400;
+}
+
+.timeline-cgpa {
+    font-size: 15px;
+    color: #ffb727; /* Yellow highlight */
+    font-weight: 600;
+}
+
+.timeline-degree {
+    font-size: 15px;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+}
+
+.timeline-desc {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Notable Courses Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    margin-top: 20px;
+    background: #252525;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.courses-grid span {
+    font-size: 13px;
+    color: #bbb;
+}
+
+/* ===========================
+   7. RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .profile-card {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+    .top-nav {
+        justify-content: center;
+    }
+    .courses-grid {
+        grid-template-columns: 1fr; /* 1 col on mobile */
+    }
+    .timeline-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .timeline-meta {
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+}
