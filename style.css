@@ -223,7 +223,7 @@ body {
 }
 
 /* ===========================
-   5. SHARED ITEM CARDS (Projects/Experience)
+   5. SHARED ITEM CARDS (Projects/Pubs)
 =========================== */
 .item-card {
     background: #252525;
@@ -306,7 +306,7 @@ body {
 }
 
 /* ===========================
-   6. TIMELINE STYLES (Education)
+   6. NEW TIMELINE STYLES (Education/Experience)
 =========================== */
 .timeline {
     position: relative;
@@ -318,6 +318,7 @@ body {
     position: relative;
     margin-bottom: 50px;
     padding-left: 20px;
+    padding-top: 2px;
 }
 
 .timeline-item:last-child {
@@ -337,52 +338,52 @@ body {
     box-shadow: 0 0 0 2px #ffb727; /* Double ring effect */
 }
 
-/* Header container for Title + Right-side Info */
-.timeline-header {
+/* --- ROW-BASED LAYOUT --- */
+.timeline-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    gap: 20px;
+    align-items: baseline; /* Aligns text nicely on the baseline */
+    margin-bottom: 8px; /* Spacing between row 1 and row 2 */
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
+    gap: 15px; /* Horizontal gap between left and right items */
 }
 
-.timeline-header h3 {
+/* Row 1 Left: University / Company Name */
+.timeline-title {
     font-size: 18px;
     color: #fff;
     font-weight: 600;
     margin: 0;
-    flex: 1; 
+    flex: 1; /* Takes available space */
+    min-width: 200px;
 }
 
-/* Right Side Container (Date + CGPA) */
-.timeline-meta {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 5px; 
-    flex-shrink: 0; 
+/* Row 2 Left: Degree / Location / Detail */
+.timeline-subtitle {
+    font-size: 15px;
+    color: #ccc;
+    font-weight: 500;
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
 }
 
+/* Row 1 Right: Date */
 .timeline-date {
     font-size: 14px;
     color: #aaa;
     font-weight: 400;
+    text-align: right;
+    flex-shrink: 0; /* Prevents wrapping if possible */
 }
 
-.timeline-cgpa {
+/* Row 2 Right: CGPA / Job Title Highlight */
+.timeline-highlight {
     font-size: 15px;
-    color: #ffb727; /* Yellow highlight */
+    color: #ffb727; /* Yellow theme color */
     font-weight: 600;
-}
-
-.timeline-degree {
-    font-size: 15px;
-    color: #ccc;
-    margin-bottom: 15px;
-    font-weight: 500;
-    display: block;
-    width: 100%;
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .timeline-desc {
@@ -426,13 +427,12 @@ body {
     .courses-grid {
         grid-template-columns: 1fr; /* 1 col on mobile */
     }
-    .timeline-header {
+    .timeline-row {
         flex-direction: column;
-        gap: 5px;
+        gap: 2px;
     }
-    .timeline-meta {
-        align-items: flex-start;
+    .timeline-date, .timeline-highlight {
         text-align: left;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 }
