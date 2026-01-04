@@ -76,6 +76,7 @@ body {
     justify-content: center;
     gap: 15px;
     margin-bottom: 30px;
+    flex-wrap: wrap; /* Helps if 4 icons are too wide */
 }
 
 .social-links a {
@@ -223,7 +224,71 @@ body {
 }
 
 /* ===========================
-   5. SHARED ITEM CARDS (Projects/Pubs)
+   5. CONTACT MESSAGE BOX
+=========================== */
+.message-box {
+    background: #252525;
+    padding: 30px;
+    border-radius: 15px; 
+    border-left: 5px solid #ffb727; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.message-box input, 
+.message-box textarea {
+    width: 100%;
+    background: #333;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.message-box input:focus, 
+.message-box textarea:focus {
+    outline: none;
+    border-color: #ffb727;
+    background: #3a3a3a;
+}
+
+.btn-send {
+    background: #ffb727;
+    color: #111;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-send:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   6. SHARED ITEM CARDS (Projects/Pubs)
 =========================== */
 .item-card {
     background: #252525;
@@ -306,7 +371,7 @@ body {
 }
 
 /* ===========================
-   6. NEW TIMELINE STYLES (Education/Experience)
+   7. TIMELINE STYLES (Education/Experience)
 =========================== */
 .timeline {
     position: relative;
@@ -410,7 +475,7 @@ body {
 }
 
 /* ===========================
-   7. RESPONSIVE
+   8. RESPONSIVE
 =========================== */
 @media (max-width: 900px) {
     .main-container {
